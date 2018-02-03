@@ -73,7 +73,8 @@ static char	*pf_read_di_helper(char *nb, t_format *format)
 	}
 	else if (format->plus != -1 && format->precision == -1 && nb[0] != '-')
 		nb[0] = '+';
-	else if (format->plus == -1 && nb[0] != '-' && format->space != -1)
+	else if (format->plus == -1 && nb[0] != '-' && format->space != -1 &&
+		nb[0] != ' ')
 	{
 		tmp = ft_strdup(nb);
 		ft_memdel((void **)&nb);
